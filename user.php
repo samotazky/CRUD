@@ -42,6 +42,8 @@
         <h2><?= htmlspecialchars($user["first_name"]) ." " .htmlspecialchars($user["second_name"]) ?></h2>
         <p><strong>Age:</strong> <?= htmlspecialchars($user["age"]) ?></p>
         <p><strong>E-Mail:</strong> <?= htmlspecialchars($user["email"]) ?></p>
+        <a href="update.php?id=<?= $user["id"] ?>">Edit</a>
+        <a href="delete.php?id=<?= $user["id"] ?>">Delete</a>
     <?php endif ?>
 
 </body>

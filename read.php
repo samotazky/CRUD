@@ -32,7 +32,7 @@
         <?php foreach($users as $one_user) : ?>
             <li>
                 <a href="user.php?id=<?= $one_user["id"] ?>">
-                    <?= htmlspecialchars($one_user["first_name"]) ?>
+                    <?= htmlspecialchars($one_user["first_name"]) ." " .htmlspecialchars($one_user["second_name"])?>
                 </a>
             </li>
         <?php endforeach ?>
