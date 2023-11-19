@@ -2,7 +2,36 @@
 
     require "assets/db.php";
 
-    connectionDB();
+    $connection = connectionDB();
+
+    $first_name = null;
+    $second_name = null;
+    $age = null;
+    $email = null;
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        
+        $first_name = $_POST["first_name"];
+        $second_name = $_POST["second_name"];
+        $age = $_POST["age"];
+        $email = $_POST["email"];
+
+        $sql = "INSERT INTO users(first_name, second_name, age, email)
+                VALUES (?, ?, ?, ?)";
+        
+        $stmt = mysqli_prepare($connection, $sql);
+
+        if(!$stmt) {
+            echo mysqli_connect_error($connection);
+        } else {
+            mysqli_stmt_bind_param($stmt, "ssis", $first_name, $second_name, $age, $email);
+            
+            mysqli_stmt_execute($stmt);
+        }
+
+
+
+    }
 
 ?>
 
