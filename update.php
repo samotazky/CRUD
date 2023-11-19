@@ -28,6 +28,7 @@
         $age = $_POST["age"];
         $email = $_POST["email"];
         $id = $_GET["id"];
+        
         $sql = "UPDATE users
                 SET first_name = ?,
                     second_name = ?,
