@@ -66,7 +66,7 @@
 </head>
 <body>
     
-<form action="update.php?id=<?= $user["id"] ?>" method="POST">
+    <form action="update.php?id=<?= $user["id"] ?>" method="POST">
         <input type="text" name="first_name" value="<?= $user['first_name'] ?>" placeholder="First Name"> <br>
         <input type="text" name="second_name" value="<?= $user['second_name'] ?>" placeholder="Second Name"> <br>
         <input type="number" name="age" value="<?= $user['age'] ?>" placeholder="age" min="18" max="99"> <br>
